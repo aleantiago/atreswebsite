@@ -1,186 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Átres</title>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Átres</title>
+  <style>
+    /* Básico */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/line-icons.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/nivo-lightbox.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/slicknav.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    /* Header */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3.5rem; /* Átres grande */
+      margin: 0 0 12px 0;
+      letter-spacing: 0.4px;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 0 0 20px 0;
+      color: #ddd;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  </head>
-  <body>
+    /* Botón (violeta con múltiplos de 3) */
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: rgb(90, 45, 135); /* claro y legible */
+      color: #fff;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow: 0 6px 14px rgba(90,45,135,0.12);
+    }
+    .btn:hover {
+      background-color: rgb(72, 36, 108);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(90,45,135,0.14);
+    }
 
-    <!-- Header Section Start -->
-    <header id="hero-area" data-stellar-background-ratio="0.5">
-      <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <a href="index.html" class="navbar-brand"><img class="img-fulid" src="img/logo.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="lnr lnr-menu"></i>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <ul class="navbar-nav mr-auto w-100 justify-content-end">
-              <li class="nav-item">
-                <a class="nav-link page-scroll" href="#hero-area">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link page-scroll" href="#services">Servicios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link page-scroll" href="https://api.whatsapp.com/send?phone=5492996355244" target="_blank">Charlemos!</a>
-              </li>
-	    </ul>
-</div>
-        </div>
+    /* Sección de servicios */
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 28px;
+      font-size: 2rem;
+      color: #111;
+    }
+    .servicios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .servicio {
+      flex: 0 0 calc(33.333% - 20px); /* tres columnas estables */
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: left;
+      min-height: 150px;
+    }
+    .servicio h3 { margin: 0 0 8px 0; font-size: 1.2rem; color: #111; }
+    .servicio p { margin: 0; color: #444; line-height: 1.45; }
 
-        <!-- Mobile Menu Start -->
-        <ul class="mobile-menu">
-           <li>
-              <a class="page-scroll" href="#hero-area">Home</a>
-            </li>
-            <li>
-              <a class="page-scroll" href="#services">Servicios</a>
-            </li>
-            <li>
-              <a class="page-scroll" href="https://api.whatsapp.com/send?phone=5492996355244" target="_blank">Charlemos!</a>
-            </li>
-        </ul>
-        <!-- Mobile Menu End -->
+    @media (max-width: 900px) {
+      .servicio { flex: 0 0 calc(50% - 20px); } /* tablets: 2 columnas */
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }   /* responsive */
+      .servicio { flex: 0 0 100%; }     /* móviles: 1 columna */
+    }
 
-      </nav>
-      <!-- Navbar End -->
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-md-10">
-            <div class="contents text-center">
-              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Pasión por la tecnología al servicio de tu emprendimiento.</h1>
-              <p class="wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.5s">
-                ¿Sentís que te falta respaldo tecnológico para crecer? En Átres transformamos la tecnología y tu presencia online en aliados estratégicos para que tu proyecto despegue sin obstáculos.
-              </p>
-              <a href="https://api.whatsapp.com/send?phone=5492996355244" target="_blank" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Charlemos!</a>
-            </div>
-          </div>
-        </div>
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 26px 20px;
+      margin-top: 24px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Átres</h1>
+    <p>Acá armamos tu web, como si fuera para nosotros. Sin vueltas, de vos a vos.</p>
+    <a id="cta-whatsapp" class="btn" href="#" target="_blank" rel="noopener" aria-label="Abrir chat de WhatsApp">Charlemos</a>
+  </header>
+
+  <section>
+    <h2>Lo que hacemos</h2>
+    <div class="servicios">
+      <div class="servicio">
+        <h3>Tu Página Web</h3>
+        <p>Te armamos un sitio rápido, moderno y sin vueltas. Se ve bien en cualquier celu, tablet o compu.</p>
       </div>
-    </header>
-    <!-- Header Section End -->
-
-    <!-- Services Section Start -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Nuestros Servicios</h2>
-          <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">
-            En Átres te acompañamos para que la tecnología y tu presencia online se conviertan en aliados estratégicos —no en obstáculos— en el camino de hacer realidad tu proyecto.
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
-              <div class="icon">
-                <i class="lnr lnr-pencil"></i>
-              </div>
-              <h4>Desarrollo Web</h4>
-              <p>Diseñamos sitios web rápidos, modernos y efectivos. Optimizados para verse y funcionar perfectamente en cualquier dispositivo: celular, computadora o tablet.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="item-boxes wow fadeInDown" data-wow-delay="0.8s">
-              <div class="icon">
-                <i class="lnr lnr-code"></i>
-              </div>
-              <h4>Tu Tienda Online</h4>
-              <p>Montamos tu e-commerce listo para vender: atractivo, fácil de usar y conectado con los medios de pago más confiables y actuales.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="item-boxes wow fadeInDown" data-wow-delay="1.2s">
-              <div class="icon">
-                <i class="lnr lnr-mustache"></i>
-              </div>
-              <h4>Marketing Digital</h4>
-              <p>Impulsamos tus ventas con campañas creativas y bien segmentadas en redes sociales. Llevamos tu marca a la audiencia correcta, en el momento justo.</p>
-            </div>
-          </div>
-        </div>
+      <div class="servicio">
+        <h3>Tu Tienda Online</h3>
+        <p>¿Querés vender online? Te dejamos tu e-commerce listo para arrancar: fácil de usar, lindo y seguro.</p>
       </div>
-    </section>
-    <!-- Services Section End -->
-
-
-
-    <!-- Footer Section Start -->
-<footer>
-      <div class="container">
-        <div class="row">
-          <!-- Footer Links -->
- <div class="col-lg-8 col-sm-8 col-xs-14">
-<div class="social-icons">
-                  <ul>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-		<p><FONT COLOR="white">Development by Átres &copy; 2025 - Template by <a rel="nofollow" href="https://uideck.com">UIdeck</a></FONT></p>
-
-                  </ul>
-                </div>
-          </div>
-        </div>
-</div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <!-- Go To Top Link -->
-    <a href="#" class="back-to-top">
-      <i class="lnr lnr-arrow-up"></i>
-    </a>
-
-    <div id="loader">
-      <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
+      <div class="servicio">
+        <h3>Marketing Digital</h3>
+        <p>Te ayudamos a que más gente te vea. Campañas simples y efectivas en redes, hechas a tu medida.</p>
       </div>
     </div>
+  </section>
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="js/jquery-min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.mixitup.js"></script>
-    <script src="js/nivo-lightbox.js"></script>
-    <script src="js/owl.carousel.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.nav.js"></script>
-    <script src="js/scrolling-nav.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/jquery.vide.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-    <script src="js/main.js"></script>
+  <footer>
+    <p>Hecho con <span style="color:rgb(90,45,135)">💜</span> por Átres. Como todo lo nuestro: simple y a mano.</p>
+  </footer>
 
-  </body>
+  <!-- WhatsApp dinámico: número NO aparece en el HTML -->
+  <script>
+    (function(){
+      const country = "54";
+      const area = "9";
+      const number = "2996355244"; // el número queda SOLO aquí (JS)
+      const full = country + area + number;
+      const url = "https://api.whatsapp.com/send?phone=" + full;
+      const el = document.getElementById("cta-whatsapp");
+      if (el) el.setAttribute("href", url);
+    })();
+  </script>
+
+</body>
 </html>
