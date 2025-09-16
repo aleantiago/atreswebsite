@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Átres</title>
+  <title>Átres | Soluciones tecnológicas para microemprendedores</title>
+  <meta name="description" content="Átres ayuda a microemprendedores a tener su web, tienda online y marketing digital de forma simple y efectiva.">
+
+  <!-- Google Fonts: Exo ExtraLight 200 -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+
   <style>
-    /* Básico */
     *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; color: #222; line-height: 1.6; }
 
     /* Header */
     header {
@@ -23,24 +21,27 @@
       text-align: center;
     }
     header h1 {
-      font-size: 3.5rem; /* Átres grande */
-      margin: 0 0 12px 0;
+      font-family: 'Exo', sans-serif;
+      font-weight: 200;
+      font-size: 3.5rem;
+      margin: 0 0 12px;
       letter-spacing: 0.4px;
     }
     header p {
       font-size: 1.1rem;
-      margin: 0 0 20px 0;
+      margin: 0 0 20px;
       color: #ddd;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 600px;
+      margin-left:auto;
+      margin-right:auto;
+      line-height: 1.5;
     }
 
-    /* Botón (violeta con múltiplos de 3) */
+    /* Botón CTA */
     .btn {
       display: inline-block;
       padding: 12px 25px;
-      background-color: rgb(90, 45, 135); /* claro y legible */
+      background-color: rgb(90, 45, 135);
       color: #fff;
       border-radius: 6px;
       font-weight: 700;
@@ -54,43 +55,23 @@
       box-shadow: 0 10px 22px rgba(90,45,135,0.14);
     }
 
-    /* Sección de servicios */
-    section {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px 40px 20px;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 28px;
-      font-size: 2rem;
-      color: #111;
-    }
-    .servicios {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: stretch;
-    }
+    /* Sección */
+    section { max-width: 1100px; margin: 40px auto; padding: 0 20px 40px; }
+    section h2 { text-align: center; margin-bottom: 28px; font-size: 2rem; color: #111; }
+    .servicios { display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; }
     .servicio {
-      flex: 0 0 calc(33.333% - 20px); /* tres columnas estables */
+      flex: 0 0 calc(33.333% - 20px);
       background: #fff;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       text-align: left;
-      min-height: 150px;
+      min-height: 160px;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
-    .servicio h3 { margin: 0 0 8px 0; font-size: 1.2rem; color: #111; }
+    .servicio:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+    .servicio h3 { margin: 0 0 8px; font-size: 1.2rem; color: #111; }
     .servicio p { margin: 0; color: #444; line-height: 1.45; }
-
-    @media (max-width: 900px) {
-      .servicio { flex: 0 0 calc(50% - 20px); } /* tablets: 2 columnas */
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }   /* responsive */
-      .servicio { flex: 0 0 100%; }     /* móviles: 1 columna */
-    }
 
     /* Footer */
     footer {
@@ -101,51 +82,65 @@
       margin-top: 24px;
       font-size: 0.95rem;
     }
+
+    /* Responsivo */
+    @media (max-width: 900px) { .servicio { flex: 0 0 calc(50% - 20px); } }
+    @media (max-width: 600px) { header h1 { font-size: 2.2rem; } .servicio { flex: 0 0 100%; } }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Átres</h1>
-    <p>Te armamos tu web, sin vueltas, trabajando con vos.</p>
-    <a id="cta-whatsapp" class="btn" href="#" target="_blank" rel="noopener" aria-label="Abrir chat de WhatsApp">Charlemos</a>
-  </header>
+<header>
+  <h1>ÁTRES</h1>
+  <p>
+    SOLUCIONES TECNOLÓGICAS PARA MICROEMPRENDEDORES.<br>
+    <br>
+    SIN VUELTAS.<br>
+    <br>
+  </p>
+  <a id="cta-whatsapp" class="btn" href="#" target="_blank" rel="noopener" aria-label="Abrir chat de WhatsApp">¡Charlemos!</a>
+</header>
 
-  <section>
-    <h2>Lo que hacemos</h2>
-    <div class="servicios">
-      <div class="servicio">
-        <h3>Tu Página Web</h3>
-        <p>Te armamos un sitio rápido, moderno y que se verá bien en cualquier celu, tablet o compu.</p>
-      </div>
-      <div class="servicio">
-        <h3>Tu Tienda Online</h3>
-        <p>Te dejamos tu tienda lista para arrancar: fácil de usar, linda y segura.</p>
-      </div>
-      <div class="servicio">
-        <h3>Marketing Digital</h3>
-        <p>Te ayudamos a que más gente te vea. Campañas simples y efectivas en redes, hechas a tu medida.</p>
-      </div>
+<section id="servicios">
+  <h2>Lo que hacemos</h2>
+  <div class="servicios">
+    <div class="servicio">
+      <h3>Sitio Web</h3>
+      <p>Te armamos uno moderno, rápido y que se verá bien en cualquier celu, tablet o compu.</p>
     </div>
-  </section>
+    <div class="servicio">
+      <h3>Tienda Online</h3>
+      <p>La dejamos lista para arrancar, fácil de usar, bonita y segura.</p>
+    </div>
+    <div class="servicio">
+      <h3>Marketing Digital</h3>
+      <p>Te ayudamos a que más gente te vea. Con campañas efectivas en redes sociales adaptadas a tu microemprendimiento.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>Hecho con <span style="color:rgb(90,45,135)">💜</span> por Átres.</p>
-  </footer>
+<footer>
+  <p>2025 | Hecho con <span style="color:rgb(90,45,135)">💜</span> por Átres. |
+    <a id="footer-whatsapp" href="#" style="color:#fff;text-decoration:underline;">Contáctanos</a>
+  </p>
+</footer>
 
-  <!-- WhatsApp dinámico: número NO aparece en el HTML -->
-  <script>
-    (function(){
-      const country = "54";
-      const area = "9";
-      const number = "2996355244"; // el número queda SOLO aquí (JS)
-      const full = country + area + number;
-      const url = "https://api.whatsapp.com/send?phone=" + full;
-      const el = document.getElementById("cta-whatsapp");
-      if (el) el.setAttribute("href", url);
-    })();
-  </script>
+<script>
+  // WhatsApp dinámico
+  (function(){
+    const country = "54";
+    const area = "9";
+    const number = "2996355244";
+    const full = country + area + number;
+    const url = "https://api.whatsapp.com/send?phone=" + full;
+
+    const headerBtn = document.getElementById("cta-whatsapp");
+    if (headerBtn) headerBtn.setAttribute("href", url);
+
+    const footerBtn = document.getElementById("footer-whatsapp");
+    if (footerBtn) footerBtn.setAttribute("href", url);
+  })();
+</script>
 
 </body>
 </html>
-
