@@ -1,150 +1,443 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Átres | Servicios tecnológicos para emprendedores y microemprendedores</title>
-  <meta name="description" content="Átres ayuda a microemprendedores a tener su web, tienda online y marketing digital de forma simple y efectiva.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Átres | Servicios tecnológicos para emprendedores y microemprendedores</title>
+    <meta name="description" content="Átres ayuda a microemprendedores a tener su web, tienda online y marketing digital de forma simple y efectiva.">
+    <meta name="keywords" content="sitio web, tienda online, marketing digital, emprendedores, microemprendimientos, argentina">
 
-  <!-- Google Fonts: Exo ExtraLight 200 -->
-  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Lovable">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; color: #222; line-height: 1.6; }
+    <meta property="og:title" content="Átres | Servicios tecnológicos para emprendedores">
+    <meta property="og:description" content="Átres ayuda a microemprendedores a tener su web, tienda online y marketing digital de forma simple y efectiva.">
+    <meta property="og:type" content="website">
 
-    /* Header */
-    header {
-      background: #000;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-family: 'Exo', sans-serif;
-      font-weight: 200;
-      font-size: 3.5rem;
-      margin: 0 0 12px;
-      letter-spacing: 0.4px;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin: 0 0 20px;
-      color: #ddd;
-      max-width: 600px;
-      margin-left:auto;
-      margin-right:auto;
-      line-height: 1.5;
-    }
+    <meta name="twitter:card" content="summary_large_image">
 
-    /* Botón CTA */
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: rgb(90, 45, 135);
-      color: #fff;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-      box-shadow: 0 6px 14px rgba(90,45,135,0.12);
-    }
-    .btn:hover {
-      background-color: rgb(72, 36, 108);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 22px rgba(90,45,135,0.14);
-    }
+    <style>
+        /* Design System Variables */
+        :root {
+            /* Átres Brand Colors */
+            --background: 0 0% 96%;
+            --foreground: 0 0% 13%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 13%;
+            --primary: 270 50% 35%;
+            --primary-foreground: 0 0% 100%;
+            --primary-hover: 270 50% 30%;
+            --primary-glow: 270 50% 45%;
+            --secondary: 270 40% 25%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 0 0% 96%;
+            --muted-foreground: 0 0% 40%;
+            --border: 0 0% 90%;
+            --hero-bg: 0 0% 4%;
+            --hero-text: 0 0% 87%;
+            --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+            --gradient-hero: linear-gradient(135deg, hsl(var(--hero-bg)), hsl(270 30% 8%));
+            --shadow-subtle: 0 6px 18px rgba(0, 0, 0, 0.06);
+            --shadow-elevated: 0 12px 24px rgba(0, 0, 0, 0.12);
+            --shadow-glow: 0 6px 14px hsla(var(--primary), 0.12);
+            --shadow-glow-hover: 0 10px 22px hsla(var(--primary), 0.14);
+            --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --radius: 0.75rem;
+        }
 
-    /* Sección */
-    section { max-width: 1100px; margin: 40px auto; padding: 0 20px 40px; }
-    section h2 { text-align: center; margin-bottom: 28px; font-size: 2rem; color: #111; }
-    .servicios { display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; }
-    .servicio {
-      flex: 0 0 calc(33.333% - 20px);
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      text-align: left;
-      min-height: 160px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .servicio:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
-    .servicio h3 { margin: 0 0 8px; font-size: 1.2rem; color: #111; }
-    .servicio p { margin: 0; color: #444; line-height: 1.45; }
+        /* Reset and Base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Footer */
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 26px 20px;
-      margin-top: 24px;
-      font-size: 0.95rem;
-    }
+        body {
+            font-family: 'Exo', sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.6;
+            min-height: 100vh;
+        }
 
-    /* Responsivo */
-    @media (max-width: 900px) { .servicio { flex: 0 0 calc(50% - 20px); } }
-    @media (max-width: 600px) { header h1 { font-size: 2.2rem; } .servicio { flex: 0 0 100%; } }
-  </style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--background));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: hsla(var(--primary), 0.2);
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsla(var(--primary), 0.3);
+        }
+
+        /* Animations */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-hero);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Exo', sans-serif;
+            font-weight: 200;
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            padding-top: 1rem;
+            font-size: 1.125rem;
+            color: white;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        /* Button */
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #5A2D88;
+            color: white;
+            border: none;
+            border-radius: calc(var(--radius) - 2px);
+            font-weight: 500;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-hero:hover {
+            background: #4b2373;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .btn-hero svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-right: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-hero:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Section */
+        .section {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Exo', sans-serif;
+            font-weight: 300;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: hsl(var(--foreground));
+            text-align: center;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: hsla(var(--card), 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid hsla(var(--border), 0.5);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-family: 'Exo', sans-serif;
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: hsl(var(--foreground));
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: hsl(var(--muted-foreground));
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: hsl(var(--hero-bg));
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 72rem;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #ffffff;
+            font-family: 'Exo', sans-serif;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-heart {
+            color: hsl(var(--primary-glow));
+        }
+
+        .footer-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffffff;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-link:hover {
+            color: hsl(var(--primary-glow));
+            text-decoration: none;
+        }
+
+        .footer-link svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header class="hero">
+        <div class="hero-bg"></div>
 
-<header>
-  <h1>ÁTRES</h1>
-  <p>
-    Servicios tecnológicos para emprendedores y microemprendedores.<br>
-    <br>
-    Sin vueltas.<br>
-    <br>
-  </p>
-  <a id="cta-whatsapp" class="btn" href="#" target="_blank" rel="noopener" aria-label="Abrir chat de WhatsApp">¡Charlemos!</a>
-</header>
+        <div class="hero-pattern"></div>
 
-<section id="servicios">
-  <h2>Lo que hacemos</h2>
-  <div class="servicios">
-    <div class="servicio">
-      <h3>Sitio Web</h3>
-      <p>Te armamos uno moderno, rápido y que se verá bien en cualquier celu, tablet o compu.</p>
-    </div>
-    <div class="servicio">
-      <h3>Tienda Online</h3>
-      <p>La dejamos lista para arrancar, fácil de usar, bonita y segura.</p>
-    </div>
-    <div class="servicio">
-      <h3>Marketing Digital</h3>
-      <p>Te ayudamos a que más gente te vea. Con campañas efectivas en redes sociales adaptadas a tu emprendimiento o microemprendimiento.</p>
-    </div>
-  </div>
-</section>
+        <div class="hero-content animate-fade-in">
+            <h1 class="hero-title">ÁTRES</h1>
 
-<footer>
-  <p>2025 | Hecho con <span style="color:rgb(90,45,135)">💜</span> por Átres. |
-    <a id="footer-whatsapp" href="#" style="color:#fff;text-decoration:underline;">Contáctanos</a>
-  </p>
-</footer>
+            <div style="margin-bottom: 3rem;">
+                <p class="hero-subtitle">Servicios tecnológicos para emprendedores</p>
+                <p class="hero-subtitle">y microemprendedores.</p>
+                <div class="hero-tagline">
+                    <p>Sin vueltas.</p>
+                </div>
+            </div>
 
-<script>
-  // WhatsApp dinámico
-  (function(){
-    const country = "54";
-    const area = "9";
-    const number = "2996355244";
-    const full = country + area + number;
-    const url = "https://api.whatsapp.com/send?phone=" + full;
+            <a href="#" id="cta-whatsapp" class="btn-hero" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.491 3.488"/>
+                </svg>
+                ¡Charlemos!
+            </a>
+        </div>
+    </header>
 
-    const headerBtn = document.getElementById("cta-whatsapp");
-    if (headerBtn) headerBtn.setAttribute("href", url);
+    <main>
+        <section class="section" id="servicios">
+            <div>
+                <h2 class="section-title">Lo que hacemos</h2>
+            </div>
 
-    const footerBtn = document.getElementById("footer-whatsapp");
-    if (footerBtn) footerBtn.setAttribute("href", url);
-  })();
-</script>
+            <div class="services-grid">
+                <div class="service-card animate-fade-in">
+                    <div>
+                        <div class="service-icon">🌐</div>
+                        <h3 class="service-title">Sitio Web</h3>
+                    </div>
+                    <div>
+                        <p class="service-description">Te armamos uno moderno, rápido y que se verá bien en cualquier celu, tablet o compu.</p>
+                    </div>
+                </div>
 
+                <div class="service-card animate-fade-in" style="animation-delay: 0.1s;">
+                    <div>
+                        <div class="service-icon">🛒</div>
+                        <h3 class="service-title">Tienda Online</h3>
+                    </div>
+                    <div>
+                        <p class="service-description">La dejamos lista para arrancar, fácil de usar, bonita y segura.</p>
+                    </div>
+                </div>
+
+                <div class="service-card animate-fade-in" style="animation-delay: 0.2s;">
+                    <div>
+                        <div class="service-icon">📱</div>
+                        <h3 class="service-title">Marketing Digital</h3>
+                    </div>
+                    <div>
+                        <p class="service-description">Te ayudamos a que más gente te vea. Con campañas efectivas en redes sociales adaptadas a tu emprendimiento o microemprendimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>2025 | Hecho con <span class="footer-heart">💜</span> por Átres.</p>
+                <a href="#" id="footer-whatsapp" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.491 3.488"/>
+                    </svg>
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp dinámico
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappNumber = "5492996355244";
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}`;
+
+            const ctaBtn = document.getElementById("cta-whatsapp");
+            const footerBtn = document.getElementById("footer-whatsapp");
+
+            if (ctaBtn) {
+                ctaBtn.setAttribute("href", whatsappUrl);
+            }
+            if (footerBtn) {
+                footerBtn.setAttribute("href", whatsappUrl);
+            }
+        });
+
+        // Añadir animaciones escalonadas a las cards de servicios
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
